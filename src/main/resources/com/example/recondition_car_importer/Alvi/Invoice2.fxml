@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Alvi.Invoice2">
+   <children>
+      <Text layoutX="269.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="479.0" layoutY="41.0" mnemonicParsing="false" text="Back" />
+      <Text layoutX="57.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name:" />
+      <Text layoutX="57.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle:" />
+      <Text layoutX="57.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Price:" />
+      <Text layoutX="57.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Fee:" />
+      <Text layoutX="57.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Import Duty:" />
+      <Text layoutX="57.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VAT:" />
+      <Text layoutX="79.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Print Invoice">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="178.0" layoutY="333.0" mnemonicParsing="false" text="Print Invoice" />
+      <Label layoutX="178.0" layoutY="75.0" text="Label" />
+      <Label layoutX="178.0" layoutY="104.0" text="Label" />
+      <Label layoutX="178.0" layoutY="132.0" text="Label" />
+      <Label layoutX="178.0" layoutY="167.0" text="Label" />
+      <Label layoutX="178.0" layoutY="200.0" text="Label" />
+      <Label layoutX="178.0" layoutY="231.0" text="Label" />
+   </children>
+</AnchorPane>
