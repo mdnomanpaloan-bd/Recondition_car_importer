@@ -6,33 +6,33 @@ import javafx.scene.control.*;
 public class BrowseCars
 {
     @javafx.fxml.FXML
-    private ComboBox makeCB;
+    private ComboBox<String> makeCB;
     @javafx.fxml.FXML
     private TextField minPriceTF;
     @javafx.fxml.FXML
     private TextField maxPriceTF;
     @javafx.fxml.FXML
-    private ComboBox modelCB;
+    private ComboBox<String> modelCB;
     @javafx.fxml.FXML
-    private ComboBox yearCB;
+    private ComboBox<String> yearCB;
     @javafx.fxml.FXML
-    private TableColumn StatusTV;
+    private TableColumn<BrowseCars, String> StatusTV;
     @javafx.fxml.FXML
-    private TableColumn carIDTV;
+    private TableColumn<BrowseCars, String> carIDTV;
     @javafx.fxml.FXML
-    private TableColumn yearTV;
+    private TableColumn<BrowseCars, String> yearTV;
     @javafx.fxml.FXML
-    private TableColumn modelTV;
+    private TableColumn<BrowseCars, String> modelTV;
     @javafx.fxml.FXML
-    private TableColumn mileageTV;
+    private TableColumn<BrowseCars, String> mileageTV;
     @javafx.fxml.FXML
     private RadioButton newArrivalRB;
     @javafx.fxml.FXML
-    private TableView browseAvailableCarsTV;
+    private TableView<String> browseAvailableCarsTV;
     @javafx.fxml.FXML
-    private TableColumn makeTV;
+    private TableColumn<BrowseCars, String> makeTV;
     @javafx.fxml.FXML
-    private TableColumn PriceTV;
+    private TableColumn<BrowseCars, String> PriceTV;
     @javafx.fxml.FXML
     private RadioButton reconditionedRB;
 

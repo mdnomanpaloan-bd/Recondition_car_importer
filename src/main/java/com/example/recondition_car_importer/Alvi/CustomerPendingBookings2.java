@@ -9,19 +9,19 @@ import javafx.scene.control.TableView;
 public class CustomerPendingBookings2
 {
     @javafx.fxml.FXML
-    private TableColumn VehicleTV;
+    private TableColumn<CompareCars,String > VehicleTV;
     @javafx.fxml.FXML
-    private TableColumn StatusTV;
+    private TableColumn<CompareCars,String > StatusTV;
     @javafx.fxml.FXML
     private Label CustomerNameLabel;
     @javafx.fxml.FXML
-    private TableColumn CustomerTV;
+    private TableColumn<CompareCars,String > CustomerTV;
     @javafx.fxml.FXML
     private Label VehicleLabel;
     @javafx.fxml.FXML
     private Label paymentMethodLabel;
     @javafx.fxml.FXML
-    private TableView CustomerBookingsTV;
+    private TableView<String > CustomerBookingsTV;
     @javafx.fxml.FXML
     private Button backOnAction;
     @javafx.fxml.FXML
@@ -29,7 +29,7 @@ public class CustomerPendingBookings2
     @javafx.fxml.FXML
     private Label pickupDateLabel;
     @javafx.fxml.FXML
-    private TableColumn BookingIDTV;
+    private TableColumn<CompareCars,String > BookingIDTV;
 
     @javafx.fxml.FXML
     public void initialize() {

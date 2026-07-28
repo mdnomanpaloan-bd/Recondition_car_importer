@@ -11,21 +11,21 @@ public class SalesReport2
     @javafx.fxml.FXML
     private DatePicker reportFromDP;
     @javafx.fxml.FXML
-    private TableColumn dateTV;
+    private TableColumn<SalesReport2,String> dateTV;
     @javafx.fxml.FXML
-    private TableColumn CustomerTV;
+    private TableColumn<SalesReport2,String>  CustomerTV;
     @javafx.fxml.FXML
-    private TableColumn vehicleTV;
+    private TableColumn <SalesReport2,String> vehicleTV;
     @javafx.fxml.FXML
     private Label totalRevenueLabel;
     @javafx.fxml.FXML
     private DatePicker ReportToDP;
     @javafx.fxml.FXML
-    private TableView salesRerportTV;
+    private TableView<String>  salesRerportTV;
     @javafx.fxml.FXML
-    private TableColumn invoiceTV;
+    private TableColumn <SalesReport2,String> invoiceTV;
     @javafx.fxml.FXML
-    private TableColumn amountTV;
+    private TableColumn<SalesReport2,String>  amountTV;
     @javafx.fxml.FXML
     private Label totalVehicleSoldLabel;
 

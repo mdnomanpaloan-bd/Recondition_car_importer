@@ -12,7 +12,7 @@ public class Review
     @javafx.fxml.FXML
     private RadioButton fourStarRB;
     @javafx.fxml.FXML
-    private ComboBox selectVehicleCB;
+    private ComboBox<String> selectVehicleCB;
     @javafx.fxml.FXML
     private RadioButton twoStarRB;
     @javafx.fxml.FXML

@@ -18,7 +18,7 @@ public class CancelBooking
     @javafx.fxml.FXML
     private Label vehicleLabel;
     @javafx.fxml.FXML
-    private ComboBox cancellationReasonCB;
+    private ComboBox<String> cancellationReasonCB;
 
     @javafx.fxml.FXML
     public void initialize() {

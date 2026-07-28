@@ -10,19 +10,19 @@ public class AddnewCar2
     @javafx.fxml.FXML
     private TextField priceTF;
     @javafx.fxml.FXML
-    private ComboBox FuelTypeCB;
+    private ComboBox<String> FuelTypeCB;
     @javafx.fxml.FXML
-    private ComboBox conditionCB;
+    private ComboBox<String> conditionCB;
     @javafx.fxml.FXML
     private TextField chassisNumberTF;
     @javafx.fxml.FXML
-    private ComboBox yearCB;
+    private ComboBox<String> yearCB;
     @javafx.fxml.FXML
-    private ComboBox carMakeCB;
+    private ComboBox<String> carMakeCB;
     @javafx.fxml.FXML
     private TextField mileageTF;
     @javafx.fxml.FXML
-    private ComboBox transmissionCB;
+    private ComboBox<String> transmissionCB;
 
     @javafx.fxml.FXML
     public void initialize() {

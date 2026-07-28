@@ -6,17 +6,17 @@ import javafx.scene.control.*;
 public class CompareCars
 {
     @javafx.fxml.FXML
-    private TableColumn car1TV;
+    private TableColumn<CompareCars,String >  car1TV;
     @javafx.fxml.FXML
-    private TableColumn FeatureTV;
+    private TableColumn<CompareCars,String >  FeatureTV;
     @javafx.fxml.FXML
-    private TableView CompareCarsTV;
+    private TableView<String>  CompareCarsTV;
     @javafx.fxml.FXML
-    private TableColumn car2TV;
+    private TableColumn<CompareCars,String >  car2TV;
     @javafx.fxml.FXML
-    private ComboBox FirstVehicleCB;
+    private ComboBox<String>  FirstVehicleCB;
     @javafx.fxml.FXML
-    private ComboBox SecondVehicleCB;
+    private ComboBox<String> SecondVehicleCB;
 
     @javafx.fxml.FXML
     public void initialize() {

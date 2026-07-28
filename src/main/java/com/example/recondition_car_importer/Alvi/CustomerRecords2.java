@@ -6,21 +6,21 @@ import javafx.scene.control.*;
 public class CustomerRecords2
 {
     @javafx.fxml.FXML
-    private TableColumn phoneTV;
+    private TableColumn<CompareCars,String > phoneTV;
     @javafx.fxml.FXML
     private Label phoneLabel;
     @javafx.fxml.FXML
-    private TableColumn emailTV;
+    private TableColumn<CompareCars,String > emailTV;
     @javafx.fxml.FXML
     private TextField SearchCustomerTF;
     @javafx.fxml.FXML
     private Label PurchaseHistoryLabel;
     @javafx.fxml.FXML
-    private TableView CustomerRecordTV;
+    private TableView<String > CustomerRecordTV;
     @javafx.fxml.FXML
-    private TableColumn totalPurchaseTV;
+    private TableColumn<CompareCars,String > totalPurchaseTV;
     @javafx.fxml.FXML
-    private TableColumn customerNameTV;
+    private TableColumn<CompareCars,String > customerNameTV;
     @javafx.fxml.FXML
     private Label addressLabel;
     @javafx.fxml.FXML

@@ -6,21 +6,21 @@ import javafx.scene.control.*;
 public class Deliveries2
 {
     @javafx.fxml.FXML
-    private ComboBox ShipmentStatusCB;
+    private ComboBox<String> ShipmentStatusCB;
     @javafx.fxml.FXML
     private Label customerLabel;
     @javafx.fxml.FXML
-    private TableColumn customerTV;
+    private TableColumn<Deliveries2,String> customerTV;
     @javafx.fxml.FXML
-    private TableColumn vehicleTV;
+    private TableColumn<Deliveries2,String>  vehicleTV;
     @javafx.fxml.FXML
     private Label VehicleLabel;
     @javafx.fxml.FXML
-    private TableView deliveriesTV;
+    private TableView<String>  deliveriesTV;
     @javafx.fxml.FXML
-    private TableColumn bookingIDTV;
+    private TableColumn<Deliveries2,String>  bookingIDTV;
     @javafx.fxml.FXML
-    private TableColumn statusTV;
+    private TableColumn<Deliveries2,String>  statusTV;
     @javafx.fxml.FXML
     private DatePicker ExpectedDP;
 

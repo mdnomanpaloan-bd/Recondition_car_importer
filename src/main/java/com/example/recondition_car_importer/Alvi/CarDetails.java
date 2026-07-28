@@ -14,7 +14,7 @@ public class CarDetails
     @javafx.fxml.FXML
     private TextField ModelTF;
     @javafx.fxml.FXML
-    private ComboBox paymentMethodCB;
+    private ComboBox<String> paymentMethodCB;
     @javafx.fxml.FXML
     private TextField YearTF;
     @javafx.fxml.FXML

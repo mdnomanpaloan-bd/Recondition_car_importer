@@ -13,7 +13,7 @@ public class UploadDocuments
     @javafx.fxml.FXML
     private DatePicker expiryDateDP;
     @javafx.fxml.FXML
-    private ComboBox documentTCB;
+    private ComboBox<String>  documentTCB;
     @javafx.fxml.FXML
     private TextField documentNumberTF;
     @javafx.fxml.FXML

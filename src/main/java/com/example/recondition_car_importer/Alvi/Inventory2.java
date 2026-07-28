@@ -8,25 +8,25 @@ public class Inventory2
     @javafx.fxml.FXML
     private RadioButton ReconditionedRadioB;
     @javafx.fxml.FXML
-    private TableColumn ModelTV;
+    private TableColumn<Inventory2,String> ModelTV;
     @javafx.fxml.FXML
     private RadioButton NewArrivedRadioB;
     @javafx.fxml.FXML
-    private TableColumn priceTV;
+    private TableColumn<Inventory2,String> priceTV;
     @javafx.fxml.FXML
     private Label SearchVehicleLabel;
     @javafx.fxml.FXML
-    private TableView InventoryTV;
+    private TableView<String> InventoryTV;
     @javafx.fxml.FXML
-    private TableColumn yearTV;
+    private TableColumn<Inventory2,String> yearTV;
     @javafx.fxml.FXML
-    private TableColumn MakeTV;
+    private TableColumn<Inventory2,String> MakeTV;
     @javafx.fxml.FXML
     private Label priceLabel;
     @javafx.fxml.FXML
-    private TableColumn IDTV;
+    private TableColumn<Inventory2,String> IDTV;
     @javafx.fxml.FXML
-    private TableColumn conditionTV;
+    private TableColumn<Inventory2,String> conditionTV;
 
     @javafx.fxml.FXML
     public void initialize() {
