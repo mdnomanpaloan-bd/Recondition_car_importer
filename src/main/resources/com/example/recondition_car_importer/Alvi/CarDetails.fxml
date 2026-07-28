@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Alvi.CarDetails">
    <children>
       <Text layoutX="240.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Details">
@@ -16,7 +15,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="481.0" layoutY="33.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Back" />
+      <Button layoutX="481.0" layoutY="33.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="27.0" prefWidth="63.0" text="Back" />
       <Text layoutX="53.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost:">
          <font>
             <Font size="14.0" />
@@ -33,9 +32,9 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <ComboBox layoutX="164.0" layoutY="250.0" prefWidth="150.0" />
+      <ComboBox fx:id="paymentMethodCB" layoutX="164.0" layoutY="250.0" prefWidth="150.0" />
       <Text layoutX="57.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car ID:" />
-      <Label layoutX="135.0" layoutY="473.0" text="Show total cost">
+      <Label fx:id="showTotalCostLabel" layoutX="135.0" layoutY="473.0" text="Show total cost">
          <font>
             <Font size="14.0" />
          </font>
@@ -45,7 +44,7 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Button layoutX="395.0" layoutY="434.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0" text="Book Car" />
+      <Button layoutX="395.0" layoutY="434.0" mnemonicParsing="false" onAction="#BookCarOnAction" prefHeight="27.0" prefWidth="95.0" text="Book Car" />
       <Text layoutX="52.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font size="14.0" />
@@ -54,17 +53,17 @@
       <Text layoutX="52.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration:" />
       <Text layoutX="52.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Import Duty:" />
       <Text layoutX="51.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax:" />
-      <Button layoutX="51.0" layoutY="434.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="127.0" text="Calculate Total Cost" />
-      <TextField layoutX="104.0" layoutY="82.0" />
-      <TextField layoutX="104.0" layoutY="154.0" />
-      <TextField layoutX="104.0" layoutY="193.0" />
-      <TextField layoutX="364.0" layoutY="82.0" />
-      <TextField layoutX="365.0" layoutY="116.0" />
-      <TextField layoutX="366.0" layoutY="154.0" />
-      <TextField layoutX="104.0" layoutY="115.0" />
-      <TextField layoutX="126.0" layoutY="317.0" />
-      <TextField layoutX="126.0" layoutY="351.0" />
-      <TextField layoutX="126.0" layoutY="389.0" />
-      <Button layoutX="395.0" layoutY="477.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0" text="Compare Car" />
+      <Button layoutX="51.0" layoutY="434.0" mnemonicParsing="false" onAction="#calculateTotalCostOnAction" prefHeight="27.0" prefWidth="127.0" text="Calculate Total Cost" />
+      <TextField fx:id="carIDTF" layoutX="104.0" layoutY="82.0" />
+      <TextField fx:id="ModelTF" layoutX="104.0" layoutY="154.0" />
+      <TextField fx:id="YearTF" layoutX="104.0" layoutY="193.0" />
+      <TextField fx:id="MileageTF" layoutX="364.0" layoutY="82.0" />
+      <TextField fx:id="PriceTF" layoutX="365.0" layoutY="116.0" />
+      <TextField fx:id="StatusTF" layoutX="366.0" layoutY="154.0" />
+      <TextField fx:id="carMakeTF" layoutX="104.0" layoutY="115.0" />
+      <TextField fx:id="registrationTF" layoutX="126.0" layoutY="317.0" />
+      <TextField fx:id="importDutyTF" layoutX="126.0" layoutY="351.0" />
+      <TextField fx:id="TaxTF" layoutX="126.0" layoutY="389.0" />
+      <Button layoutX="395.0" layoutY="477.0" mnemonicParsing="false" onAction="#CompareCarOnAction" prefHeight="27.0" prefWidth="95.0" text="Compare Car" />
    </children>
 </AnchorPane>

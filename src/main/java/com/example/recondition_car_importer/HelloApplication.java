@@ -10,8 +10,10 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+
+        SceneSwitcher.stage = stage;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Alvi/CustomerDashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Recondition Car Importer");
         stage.setScene(scene);
         stage.show();

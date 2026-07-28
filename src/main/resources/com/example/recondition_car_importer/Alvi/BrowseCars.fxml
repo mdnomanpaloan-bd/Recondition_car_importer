@@ -17,7 +17,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="334.0" layoutY="205.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Search" />
+      <Button layoutX="334.0" layoutY="205.0" mnemonicParsing="false" onAction="#searchBrowseCarsOnAction" prefHeight="27.0" prefWidth="63.0" text="Search" />
       <Text layoutX="41.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make:" />
       <Text layoutX="41.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model:" />
       <Text layoutX="41.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year:" />
@@ -26,26 +26,26 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <ComboBox layoutX="87.0" layoutY="76.0" prefWidth="150.0" />
-      <ComboBox layoutX="87.0" layoutY="109.0" prefWidth="150.0" />
-      <ComboBox layoutX="87.0" layoutY="146.0" prefWidth="150.0" />
-      <RadioButton layoutX="32.0" layoutY="218.0" mnemonicParsing="false" text="   New Arrival" />
-      <RadioButton layoutX="139.0" layoutY="218.0" mnemonicParsing="false" text="Reconditioned" />
-      <TextField layoutX="404.0" layoutY="76.0" />
-      <TextField layoutX="404.0" layoutY="118.0" />
+      <ComboBox fx:id="makeCB" layoutX="87.0" layoutY="76.0" prefWidth="150.0" />
+      <ComboBox fx:id="modelCB" layoutX="87.0" layoutY="109.0" prefWidth="150.0" />
+      <ComboBox fx:id="yearCB" layoutX="87.0" layoutY="146.0" prefWidth="150.0" />
+      <RadioButton fx:id="newArrivalRB" layoutX="32.0" layoutY="218.0" mnemonicParsing="false" text="   New Arrival" />
+      <RadioButton fx:id="reconditionedRB" layoutX="139.0" layoutY="218.0" mnemonicParsing="false" text="Reconditioned" />
+      <TextField fx:id="minPriceTF" layoutX="404.0" layoutY="76.0" />
+      <TextField fx:id="maxPriceTF" layoutX="404.0" layoutY="118.0" />
       <Text layoutX="340.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min Price:" />
       <Text layoutX="339.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Price:" />
-      <Button layoutX="500.0" layoutY="36.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Back" />
-      <Button layoutX="479.0" layoutY="205.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Reset" />
-      <TableView layoutX="36.0" layoutY="290.0" prefHeight="200.0" prefWidth="522.0">
+      <Button layoutX="500.0" layoutY="36.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="27.0" prefWidth="63.0" text="Back" />
+      <Button layoutX="479.0" layoutY="205.0" mnemonicParsing="false" onAction="#resetBrowseCarsOnAction" prefHeight="27.0" prefWidth="63.0" text="Reset" />
+      <TableView fx:id="browseAvailableCarsTV" layoutX="36.0" layoutY="290.0" prefHeight="200.0" prefWidth="522.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Car ID" />
-          <TableColumn prefWidth="75.0" text="Make" />
-            <TableColumn prefWidth="75.0" text="Model" />
-            <TableColumn prefWidth="75.0" text="Year" />
-            <TableColumn prefWidth="75.0" text="Mileage" />
-            <TableColumn prefWidth="75.0" text="Price" />
-            <TableColumn prefWidth="75.0" text="Status" />
+          <TableColumn fx:id="carIDTV" prefWidth="75.0" text="Car ID" />
+          <TableColumn fx:id="makeTV" prefWidth="75.0" text="Make" />
+            <TableColumn fx:id="modelTV" prefWidth="75.0" text="Model" />
+            <TableColumn fx:id="yearTV" prefWidth="75.0" text="Year" />
+            <TableColumn fx:id="mileageTV" prefWidth="75.0" text="Mileage" />
+            <TableColumn fx:id="PriceTV" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="StatusTV" prefWidth="75.0" text="Status" />
         </columns>
       </TableView>
       <Text layoutX="237.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Cars">
@@ -53,6 +53,6 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button layoutX="246.0" layoutY="500.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="108.0" text="View Details" />
+      <Button layoutX="246.0" layoutY="500.0" mnemonicParsing="false" onAction="#viewDetailsOnAction" prefHeight="27.0" prefWidth="108.0" text="View Details" />
    </children>
 </AnchorPane>

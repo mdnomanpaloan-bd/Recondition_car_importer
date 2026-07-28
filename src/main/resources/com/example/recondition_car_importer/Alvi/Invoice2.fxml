@@ -13,7 +13,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="479.0" layoutY="41.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="479.0" layoutY="41.0" mnemonicParsing="false" onAction="#backOnaction" text="Back" />
       <Text layoutX="57.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name:" />
       <Text layoutX="57.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle:" />
       <Text layoutX="57.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Price:" />
@@ -25,12 +25,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button layoutX="178.0" layoutY="333.0" mnemonicParsing="false" text="Print Invoice" />
-      <Label layoutX="178.0" layoutY="75.0" text="Label" />
-      <Label layoutX="178.0" layoutY="104.0" text="Label" />
-      <Label layoutX="178.0" layoutY="132.0" text="Label" />
-      <Label layoutX="178.0" layoutY="167.0" text="Label" />
-      <Label layoutX="178.0" layoutY="200.0" text="Label" />
-      <Label layoutX="178.0" layoutY="231.0" text="Label" />
+      <Button layoutX="178.0" layoutY="333.0" mnemonicParsing="false" onAction="#printInvoiceOnAction" text="Print Invoice" />
+      <Label fx:id="customerNameLabel" layoutX="178.0" layoutY="75.0" text="Label" />
+      <Label fx:id="vehicleLabel" layoutX="178.0" layoutY="104.0" text="Label" />
+      <Label fx:id="vehiclePriceLabel" layoutX="178.0" layoutY="132.0" text="Label" />
+      <Label fx:id="registrationFeeLabel" layoutX="178.0" layoutY="167.0" text="Label" />
+      <Label fx:id="importDutyLabel" layoutX="178.0" layoutY="200.0" text="Label" />
+      <Label fx:id="VatLabel" layoutX="178.0" layoutY="231.0" text="Label" />
    </children>
 </AnchorPane>
