@@ -3,7 +3,7 @@ package com.example.recondition_car_importer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class SignUp
+public class SignUpView
 {
     @javafx.fxml.FXML
     private TextField lastName_TF;
