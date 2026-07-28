@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.SignUp">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.SignUpView">
    <children>
       <TextField fx:id="lastName_TF" layoutX="334.0" layoutY="158.0" />
       <TextField fx:id="firstName_TF" layoutX="98.0" layoutY="158.0" />
