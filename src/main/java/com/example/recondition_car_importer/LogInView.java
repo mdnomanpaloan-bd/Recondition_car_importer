@@ -47,7 +47,7 @@ public class LogInView
 
             case "Customer":
                 if(password.equals("customer123")){
-                    SceneSwitcher.switchTo("Alvi/CustomerDashboard");
+                    SceneSwitcher.switchTo("Alvi/Customer/CustomerDashboard");
                 } else {
                     showError();
                 }
@@ -55,7 +55,7 @@ public class LogInView
 
             case "Sales Executive":
                 if(password.equals("sales123")){
-                    SceneSwitcher.switchTo("Alvi/SalesExecutive2");
+                    SceneSwitcher.switchTo("Alvi/SalesExecutive/SalesExecutiveDashboard");
                 } else {
                     showError();
                 }
