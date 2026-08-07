@@ -42,6 +42,7 @@ public class CustomerPendingBookings2
 
     private BookingRecord selectedBooking;
 
+
     @javafx.fxml.FXML
     public void initialize() {
         BookingIDTV.setCellValueFactory(new PropertyValueFactory<>("bookingID"));

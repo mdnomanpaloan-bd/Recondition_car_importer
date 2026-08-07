@@ -61,6 +61,22 @@ public class LogInView
                 }
                 break;
 
+
+//            case "Admin":
+//                if(password.equals("admin123")){
+//                    SceneSwitcher.switchTo("");
+//                } else {
+//                    showError();
+//                }
+//                break
+
+//            case "Import Manager":
+//                if(password.equals("import123")){
+//                    SceneSwitcher.switchTo("");
+//                } else {
+//                    showError();
+//                }
+//                break
         }
     }
 
