@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #1e1e2e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.ShowroomExpensesController">
+    <children>
+        <Label text="Manage Showroom Expense Records" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox prefWidth="300.0" spacing="15.0" style="-fx-background-color: #2b2b3b; -fx-padding: 15; -fx-background-radius: 8;">
+                    <children>
+                        <Label text="Add New Expense" textFill="#a6adc8">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+
+                        <Label text="Category:" textFill="WHITE" />
+                        <ComboBox fx:id="comboCategory" maxWidth="1.7976931348623157E308" />
+
+                        <Label text="Amount (BDT):" textFill="WHITE" />
+                        <TextField fx:id="txtAmount" promptText="e.g. 50000" />
+
+                        <Label text="Expense Date:" textFill="WHITE" />
+                        <DatePicker fx:id="datePickerExpense" maxWidth="1.7976931348623157E308" />
+
+                        <Button maxWidth="1.7976931348623157E308" onAction="#handleAddExpense" style="-fx-background-color: #a6e3a1; -fx-text-fill: #11111b; -fx-font-weight: bold; -fx-padding: 10;" text="Add Expense" />
+
+                        <Label fx:id="lblMessage" textFill="#f9e2af" wrapText="true" />
+                    </children>
+                </VBox>
+
+                <VBox HBox.hgrow="ALWAYS" spacing="10.0">
+                    <children>
+                        <Label fx:id="lblTotalExpenditure" text="Total Showroom Expenditure: BDT 0.00" textFill="#f38ba8">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+
+                        <TableView fx:id="expenseTable" VBox.vgrow="ALWAYS" style="-fx-background-color: #2b2b3b;">
+                            <columns>
+                                <TableColumn fx:id="colCategory" prefWidth="180.0" text="Category" />
+                                <TableColumn fx:id="colAmount" prefWidth="180.0" text="Amount (BDT)" />
+                                <TableColumn fx:id="colDate" prefWidth="150.0" text="Date" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

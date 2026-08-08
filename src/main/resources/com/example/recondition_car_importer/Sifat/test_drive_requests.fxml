@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #1e1e2e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.TestDriveRequestsController">
+    <children>
+        <Label text="Approve Customer Test Drive Requests" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TableView fx:id="requestTable" HBox.hgrow="ALWAYS" style="-fx-background-color: #2b2b3b;">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="100.0" text="Request ID" />
+                        <TableColumn fx:id="colCustomer" prefWidth="160.0" text="Customer Name" />
+                        <TableColumn fx:id="colCarModel" prefWidth="200.0" text="Car Model" />
+                        <TableColumn fx:id="colDate" prefWidth="120.0" text="Date" />
+                        <TableColumn fx:id="colStatus" prefWidth="110.0" text="Status" />
+                    </columns>
+                </TableView>
+
+                <VBox prefWidth="300.0" spacing="15.0" style="-fx-background-color: #2b2b3b; -fx-padding: 15; -fx-background-radius: 8;">
+                    <children>
+                        <Label text="Manager Action Panel" textFill="#a6adc8">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+
+                        <Label text="Manager Remarks / Notes:" textFill="WHITE" />
+                        <TextArea fx:id="txtManagerRemarks" prefHeight="120.0" promptText="Enter approval/rejection remarks..." wrapText="true" />
+
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button HBox.hgrow="ALWAYS" maxWidth="1.7976931348623157E308" onAction="#handleApprove" style="-fx-background-color: #a6e3a1; -fx-text-fill: #11111b; -fx-font-weight: bold; -fx-padding: 10;" text="Approve" />
+                                <Button HBox.hgrow="ALWAYS" maxWidth="1.7976931348623157E308" onAction="#handleReject" style="-fx-background-color: #f38ba8; -fx-text-fill: #11111b; -fx-font-weight: bold; -fx-padding: 10;" text="Reject" />
+                            </children>
+                        </HBox>
+
+                        <Label fx:id="lblStatusMessage" textFill="#f9e2af" wrapText="true" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haqs_bay_automobili.RoleSelectionController">
+   <top>
+      <VBox alignment="CENTER" spacing="5.0" styleClass="header-panel">
+         <children>
+            <Label styleClass="title-label" text="HAQ'S BAY AUTOMOBILI" />
+            <Label styleClass="subtitle-label" text="Reconditioned Car Import &amp; Showroom Management System (MS3 Architecture)" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="25.0">
+         <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+         </padding>
+         <children>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #e1e1e6;" text="Select System Workspace / User Role" />
+            <HBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <!-- Role 1 Card -->
+                  <VBox alignment="CENTER" prefHeight="260.0" prefWidth="340.0" spacing="15.0" styleClass="card-panel">
+                     <children>
+                        <Label styleClass="card-title" text="USER ROLE 1: SHOWROOM MANAGER" />
+                        <Label alignment="CENTER" text="Access Inventory, Pricing, Inquiries, Reservations, Sales Transactions, Stock Monitoring, Customer Records, and Showroom Reports." textAlignment="CENTER" wrapText="true" />
+                        <Button onAction="#handleOpenShowroomManager" styleClass="button-primary" text="Launch Showroom Workspace" />
+                     </children>
+                  </VBox>
+                  <!-- Role 2 Card -->
+                  <VBox alignment="CENTER" prefHeight="260.0" prefWidth="340.0" spacing="15.0" styleClass="card-panel">
+                     <children>
+                        <Label styleClass="card-title" text="USER ROLE 2: FINANCE OFFICER" />
+                        <Label alignment="CENTER" text="Access Customer Payments, Import Cost Logs, Expense Ledger, Profit Calculation, Dues Tracking, Financial Audits, and Cash Flow Analysis." textAlignment="CENTER" wrapText="true" />
+                        <Button onAction="#handleOpenFinanceOfficer" styleClass="button-primary" text="Launch Finance Workspace" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

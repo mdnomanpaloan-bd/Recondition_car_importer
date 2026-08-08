@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #1e1e2e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.SalesPerformanceController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Label text="Monitor Sales Rep Performance" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Label text="Filter Period:" textFill="#a6adc8" />
+                <DatePicker fx:id="datePickerFilter" onAction="#handleFilterPeriod" promptText="Select Date" />
+            </children>
+        </HBox>
+
+        <Label fx:id="lblSummary" text="Total Sales: 0 Cars | Total Revenue: BDT 0.00" textFill="#a6e3a1">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <children>
+                <BarChart fx:id="barChartSales" title="Representative Revenue Generation" HBox.hgrow="ALWAYS" style="-fx-background-color: #2b2b3b; -fx-background-radius: 8;">
+                    <xAxis>
+                        <CategoryAxis fx:id="xAxis" label="Sales Representative" tickLabelFill="WHITE" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="yAxis" label="Revenue (BDT)" tickLabelFill="WHITE" />
+                    </yAxis>
+                </BarChart>
+
+                <TableView fx:id="repTable" prefWidth="350.0" style="-fx-background-color: #2b2b3b;">
+                    <columns>
+                        <TableColumn fx:id="colRepName" prefWidth="140.0" text="Rep Name" />
+                        <TableColumn fx:id="colCarsSold" prefWidth="80.0" text="Cars Sold" />
+                        <TableColumn fx:id="colRevenue" prefWidth="120.0" text="Revenue (BDT)" />
+                    </columns>
+                </TableView>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haqs_bay_automobili.ShowroomManagerController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="header-panel">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="title-label" text="HAQ'S BAY AUTOMOBILI - SHOWROOM MANAGER WORKSPACE" />
+                  <Label styleClass="subtitle-label" text="Role 1: Supporting 8 Interactive Goals with 5-Event Workflows" />
+               </children>
+            </VBox>
+            <Button onAction="#handleBackToRoleSelection" styleClass="button-secondary" text="Switch Role" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TabPane tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <!-- Goal 1: Manage Car Inventory -->
+          <Tab text="1. Car Inventory">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="340.0" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Event 1-4: Input &amp; Verify Car Details" />
+                              <Label text="Chassis Number:" /><TextField fx:id="txtInvChassis" promptText="e.g., CHS-1006" />
+                              <Label text="Brand:" /><TextField fx:id="txtInvBrand" promptText="e.g., Toyota" />
+                              <Label text="Model:" /><TextField fx:id="txtInvModel" promptText="e.g., Harrier" />
+                              <Label text="Year:" /><TextField fx:id="txtInvYear" promptText="e.g., 2022" />
+                              <Label text="Purchase Price ($):" /><TextField fx:id="txtInvPurchasePrice" promptText="e.g., 30000" />
+                              <Label text="Selling Price ($):" /><TextField fx:id="txtInvSellingPrice" promptText="e.g., 42000" />
+                              <Button onAction="#handleAddInventoryCar" styleClass="button-primary" text="Validate &amp; Add Car" />
+                              <Label fx:id="lblInvStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Event 5: Display Updated Inventory List" />
+                              <TableView fx:id="tblInventory" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colInvChassis" prefWidth="120.0" text="Chassis No" />
+                                  <TableColumn fx:id="colInvBrand" prefWidth="110.0" text="Brand" />
+                                  <TableColumn fx:id="colInvModel" prefWidth="130.0" text="Model" />
+                                  <TableColumn fx:id="colInvPrice" prefWidth="110.0" text="Price ($)" />
+                                  <TableColumn fx:id="colInvStatus" prefWidth="110.0" text="Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 2: Manage Car Pricing -->
+          <Tab text="2. Pricing">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="12.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Pricing &amp; Discount Management" />
+                              <Label text="Select Vehicle:" /><ComboBox fx:id="comboPricingCar" prefWidth="330.0" />
+                              <Label text="New Price ($):" /><TextField fx:id="txtNewPrice" promptText="Leave empty to keep current" />
+                              <Label text="Discount (%):" /><TextField fx:id="txtDiscountPercent" promptText="e.g., 5.0" />
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Button onAction="#handleCalculateSellingPrice" styleClass="button-secondary" text="Calculate" />
+                                    <Button onAction="#handleSaveCarPrice" styleClass="button-primary" text="Apply &amp; Save" />
+                                 </children>
+                              </HBox>
+                              <Label text="Final Calculated Price:" style="-fx-font-weight: bold;" />
+                              <Label fx:id="lblFinalCalculatedPrice" styleClass="metric-value" text="$0.00" />
+                              <Label fx:id="lblPricingStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Vehicle Selling Price Catalog" />
+                              <TableView fx:id="tblPricing" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colPriceChassis" prefWidth="140.0" text="Chassis No" />
+                                  <TableColumn fx:id="colPriceModel" prefWidth="200.0" text="Brand &amp; Model" />
+                                  <TableColumn fx:id="colPriceCurrent" prefWidth="140.0" text="Current Price ($)" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 3: Handle Customer Inquiries -->
+          <Tab text="3. Inquiries">
+               <content>
+                  <VBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card-panel">
+                           <children>
+                              <Label text="Search Vehicle:" /><TextField fx:id="txtInquiryQuery" prefWidth="220.0" promptText="Enter Brand, Model, Chassis" />
+                              <Label text="Status:" /><ComboBox fx:id="comboInquiryFilter" prefWidth="150.0" />
+                              <Button onAction="#handleSearchInquiries" styleClass="button-primary" text="Filter Inventory" />
+                              <Label fx:id="lblInquiryCount" styleClass="status-label" text="Matching Vehicles Found: 5" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tblInquiries" VBox.vgrow="ALWAYS" styleClass="card-panel">
+                          <columns>
+                            <TableColumn fx:id="colInqChassis" prefWidth="140.0" text="Chassis No" />
+                            <TableColumn fx:id="colInqBrand" prefWidth="130.0" text="Brand" />
+                            <TableColumn fx:id="colInqModel" prefWidth="160.0" text="Model" />
+                            <TableColumn fx:id="colInqPrice" prefWidth="130.0" text="Selling Price ($)" />
+                            <TableColumn fx:id="colInqStatus" prefWidth="130.0" text="Availability Status" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 4: Manage Car Reservations -->
+          <Tab text="4. Reservations">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="12.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Vehicle Reservation Entry" />
+                              <Label text="Available Car:" /><ComboBox fx:id="comboResCar" prefWidth="330.0" />
+                              <Label text="Customer:" /><ComboBox fx:id="comboResCustomer" prefWidth="330.0" />
+                              <Label text="Booking Deposit ($):" /><TextField fx:id="txtBookingAmount" promptText="e.g., 2000" />
+                              <Button onAction="#handleCreateReservation" styleClass="button-primary" text="Confirm Reservation" />
+                              <Label fx:id="lblResStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Active Showroom Reservations" />
+                              <TableView fx:id="tblReservations" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colResId" prefWidth="100.0" text="Res ID" />
+                                  <TableColumn fx:id="colResChassis" prefWidth="130.0" text="Chassis No" />
+                                  <TableColumn fx:id="colResCustomer" prefWidth="160.0" text="Customer" />
+                                  <TableColumn fx:id="colResAmount" prefWidth="120.0" text="Deposit ($)" />
+                                  <TableColumn fx:id="colResStatus" prefWidth="110.0" text="Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 5: Process Car Sales -->
+          <Tab text="5. Sales">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="12.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Process New Car Sale" />
+                              <Label text="Select Car:" /><ComboBox fx:id="comboSaleCar" prefWidth="330.0" />
+                              <Label text="Buyer/Customer:" /><ComboBox fx:id="comboSaleCustomer" prefWidth="330.0" />
+                              <Label text="Initial Payment Amount ($):" /><TextField fx:id="txtSalePaidAmount" promptText="e.g., 25000" />
+                              <Button onAction="#handleProcessSale" styleClass="button-primary" text="Complete Sale &amp; Issue Invoice" />
+                              <Label fx:id="lblSaleStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Completed Sales Transactions" />
+                              <TableView fx:id="tblSales" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colSaleInv" prefWidth="110.0" text="Invoice ID" />
+                                  <TableColumn fx:id="colSaleChassis" prefWidth="130.0" text="Chassis No" />
+                                  <TableColumn fx:id="colSaleCustomer" prefWidth="160.0" text="Customer Name" />
+                                  <TableColumn fx:id="colSaleAmount" prefWidth="120.0" text="Total ($)" />
+                                  <TableColumn fx:id="colSaleStatus" prefWidth="110.0" text="Payment" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 6: Monitor Showroom Stock -->
+          <Tab text="6. Stock Monitor">
+               <content>
+                  <VBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <HBox spacing="15.0">
+                           <children>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Total Stock" /><Label fx:id="lblTotalStock" styleClass="metric-value" text="5" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Available" /><Label fx:id="lblAvailableStock" styleClass="metric-value" style="-fx-text-fill: #1bc5bd;" text="3" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Reserved" /><Label fx:id="lblReservedStock" styleClass="metric-value" style="-fx-text-fill: #ffa800;" text="1" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Sold" /><Label fx:id="lblSoldStock" styleClass="metric-value" style="-fx-text-fill: #f64e60;" text="1" /></children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card-panel">
+                           <children>
+                              <Label text="Filter by Brand Category:" /><ComboBox fx:id="comboStockCategoryFilter" onAction="#handleFilterStock" prefWidth="180.0" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tblStockSummary" VBox.vgrow="ALWAYS" styleClass="card-panel">
+                          <columns>
+                            <TableColumn fx:id="colStockChassis" prefWidth="150.0" text="Chassis No" />
+                            <TableColumn fx:id="colStockBrandModel" prefWidth="250.0" text="Brand &amp; Model" />
+                            <TableColumn fx:id="colStockStatus" prefWidth="150.0" text="Stock Status" />
+                            <TableColumn fx:id="colStockPrice" prefWidth="150.0" text="Selling Price ($)" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 7: Manage Customer Records -->
+          <Tab text="7. Customer Records">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="New Customer Entry" />
+                              <Label text="Customer ID:" /><TextField fx:id="txtCustId" promptText="e.g., CUST-104" />
+                              <Label text="Full Name:" /><TextField fx:id="txtCustName" promptText="e.g., Anisur Rahman" />
+                              <Label text="Phone Number:" /><TextField fx:id="txtCustPhone" promptText="e.g., +8801700000000" />
+                              <Label text="Email Address:" /><TextField fx:id="txtCustEmail" promptText="e.g., anis@gmail.com" />
+                              <Label text="Address:" /><TextField fx:id="txtCustAddress" promptText="e.g., Uttara, Dhaka" />
+                              <Button onAction="#handleAddCustomer" styleClass="button-primary" text="Register Customer" />
+                              <Label fx:id="lblCustStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Customer Registry" />
+                              <TableView fx:id="tblCustomers" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colCustId" prefWidth="110.0" text="Cust ID" />
+                                  <TableColumn fx:id="colCustName" prefWidth="160.0" text="Full Name" />
+                                  <TableColumn fx:id="colCustPhone" prefWidth="140.0" text="Phone" />
+                                  <TableColumn fx:id="colCustEmail" prefWidth="170.0" text="Email" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 8: Generate Showroom Reports -->
+          <Tab text="8. Showroom Reports">
+               <content>
+                  <VBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card-panel">
+                           <children>
+                              <Label text="Report Type:" /><ComboBox fx:id="comboReportType" prefWidth="200.0" />
+                              <Label text="Start Date:" /><DatePicker fx:id="dpReportStart" prefWidth="150.0" />
+                              <Label text="End Date:" /><DatePicker fx:id="dpReportEnd" prefWidth="150.0" />
+                              <Button onAction="#handleGenerateShowroomReport" styleClass="button-primary" text="Generate Report" />
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="txtShowroomReportOutput" editable="false" font="$x1" style="-fx-font-family: 'Courier New', monospace; -fx-font-size: 14px;" VBox.vgrow="ALWAYS" styleClass="card-panel" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

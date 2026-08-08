@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #1e1e2e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.SalesReportsController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Label text="Generate Monthly Showroom Sales Reports" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Label text="Period:" textFill="#a6adc8" />
+                <ComboBox fx:id="comboPeriod" prefWidth="180.0" />
+                <Button onAction="#handleGenerateReport" style="-fx-background-color: #89b4fa; -fx-text-fill: #11111b; -fx-font-weight: bold; -fx-padding: 8 15;" text="Generate Report" />
+                <Button onAction="#handleExportReport" style="-fx-background-color: #a6e3a1; -fx-text-fill: #11111b; -fx-font-weight: bold; -fx-padding: 8 15;" text="Export to Text File" />
+            </children>
+        </HBox>
+
+        <HBox spacing="30.0">
+            <children>
+                <Label fx:id="lblTotalUnits" text="Total Units Sold: 0" textFill="#f9e2af">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblTotalRevenue" text="Total Revenue: BDT 0.00" textFill="#a6e3a1">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblMessage" textFill="#89b4fa" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <TextArea fx:id="txtReportSummary" editable="false" prefHeight="400.0" style="-fx-control-inner-background: #181825; -fx-font-family: 'Courier New'; -fx-font-size: 13;" VBox.vgrow="ALWAYS" wrapText="true" />
+    </children>
+</VBox>

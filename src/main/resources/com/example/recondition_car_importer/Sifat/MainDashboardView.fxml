@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0" style="-fx-background-color: #181825;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.MainDashboardController">
+    <left>
+        <VBox prefWidth="280.0" spacing="10.0" style="-fx-background-color: #11111b; -fx-padding: 15;">
+            <children>
+                <Label text="Reconditioned Car System" textFill="#89b4fa">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label text="Importers &amp; Showroom Portal" textFill="#a6adc8">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+
+                <Separator style="-fx-background-color: #313244;" />
+
+                <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label text="USER 5: SHOWROOM MANAGER" textFill="#f9e2af">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="5.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal1" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="1. Manage Inventory" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal2" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="2. Assign Sales Reps" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal3" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="3. Vehicle Pricing" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal4" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="4. Test Drive Requests" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal5" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="5. Sales Rep Performance" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal6" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="6. Track Sales &amp; Bookings" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal7" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="7. Customer Complaints" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal8" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="8. Monthly Sales Reports" />
+
+                                <Separator style="-fx-background-color: #313244;" />
+
+                                <Label text="USER 6: FINANCE OFFICER" textFill="#a6e3a1">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal9" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="9. Issue Invoices" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal10" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="10. Process Payments" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal11" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="11. Approve Financing" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal12" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="12. Calculate Taxes &amp; Duty" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal13" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="13. Showroom Expenses" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal14" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="14. Employee Salary" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal15" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="15. Track Profit &amp; Margin" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleGoal16" alignment="BASELINE_LEFT" style="-fx-background-color: #313244; -fx-text-fill: white;" text="16. Financial Audit Reports" />
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </left>
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" style="-fx-background-color: #1e1e2e; -fx-padding: 0 20;">
+            <children>
+                <Label fx:id="lblActiveViewTitle" text="Goal Title" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <StackPane fx:id="contentArea" BorderPane.alignment="CENTER" />
+    </center>
+</BorderPane>

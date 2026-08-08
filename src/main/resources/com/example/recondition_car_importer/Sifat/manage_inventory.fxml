@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #1e1e2e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.ManageInventoryController">
+    <children>
+        <Label text="Manage Inventory &amp; Showroom Cars" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TableView fx:id="carTable" HBox.hgrow="ALWAYS" style="-fx-background-color: #2b2b3b;">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="90.0" text="Car ID" />
+                        <TableColumn fx:id="colBrand" prefWidth="120.0" text="Brand" />
+                        <TableColumn fx:id="colModel" prefWidth="150.0" text="Model" />
+                        <TableColumn fx:id="colYear" prefWidth="80.0" text="Year" />
+                        <TableColumn fx:id="colPrice" prefWidth="120.0" text="Price (BDT)" />
+                        <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+                    </columns>
+                </TableView>
+
+                <VBox prefWidth="300.0" spacing="12.0" style="-fx-background-color: #2b2b3b; -fx-padding: 15; -fx-background-radius: 8;">
+                    <children>
+                        <Label text="Car Information Form" textFill="#a6adc8">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtBrand" promptText="Brand (e.g. Toyota)" />
+                        <TextField fx:id="txtModel" promptText="Model (e.g. Harrier)" />
+                        <TextField fx:id="txtYear" promptText="Year (e.g. 2021)" />
+                        <TextField fx:id="txtPrice" promptText="Price in BDT" />
+                        <ComboBox fx:id="comboStatus" maxWidth="1.7976931348623157E308" promptText="Select Status" />
+
+                        <VBox spacing="8.0" style="-fx-padding: 10 0 0 0;">
+                            <children>
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleAddCar" style="-fx-background-color: #a6e3a1; -fx-text-fill: #11111b; -fx-font-weight: bold;" text="Add Car" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleUpdateSelected" style="-fx-background-color: #89b4fa; -fx-text-fill: #11111b; -fx-font-weight: bold;" text="Update Selected" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleDeleteCar" style="-fx-background-color: #f38ba8; -fx-text-fill: #11111b; -fx-font-weight: bold;" text="Delete Car" />
+                            </children>
+                        </VBox>
+
+                        <Label fx:id="lblStatusMessage" wrapText="true" textFill="#f9e2af">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haqs_bay_automobili.FinanceOfficerController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="header-panel">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="title-label" text="HAQ'S BAY AUTOMOBILI - FINANCE OFFICER WORKSPACE" />
+                  <Label styleClass="subtitle-label" text="Role 2: Supporting 8 Interactive Financial Goals &amp; Audit Workflows" />
+               </children>
+            </VBox>
+            <Button onAction="#handleBackToRoleSelection" styleClass="button-secondary" text="Switch Role" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TabPane tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <!-- Goal 1: Manage Customer Payments -->
+          <Tab text="1. Customer Payments">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="12.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Customer Payment Entry" />
+                              <Label text="Invoice ID:" /><ComboBox fx:id="comboPaymentInvoice" prefWidth="330.0" />
+                              <Label text="Payment Amount ($):" /><TextField fx:id="txtPaymentAmount" promptText="e.g., 5000" />
+                              <Label text="Payment Method:" /><ComboBox fx:id="comboPaymentMethod" prefWidth="330.0" />
+                              <Button onAction="#handleProcessPayment" styleClass="button-primary" text="Process &amp; Issue Receipt" />
+                              <Label fx:id="lblPaymentStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Payment Collection History" />
+                              <TableView fx:id="tblPayments" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colPayId" prefWidth="100.0" text="Pay ID" />
+                                  <TableColumn fx:id="colPayInv" prefWidth="110.0" text="Invoice ID" />
+                                  <TableColumn fx:id="colPayCust" prefWidth="120.0" text="Customer ID" />
+                                  <TableColumn fx:id="colPayMethod" prefWidth="130.0" text="Method" />
+                                  <TableColumn fx:id="colPayAmount" prefWidth="120.0" text="Amount ($)" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 2: Track Import Costs -->
+          <Tab text="2. Import Costs">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Vehicle Import Cost Entry" />
+                              <Label text="Target Vehicle:" /><ComboBox fx:id="comboImportCar" prefWidth="330.0" />
+                              <Label text="L/C Number:" /><TextField fx:id="txtLCNumber" promptText="e.g., LC-990115" />
+                              <Label text="Customs Duty ($):" /><TextField fx:id="txtCustomsDuty" promptText="e.g., 3200" />
+                              <Label text="Freight Fee ($):" /><TextField fx:id="txtFreightFee" promptText="e.g., 1100" />
+                              <Label text="Port Handling ($):" /><TextField fx:id="txtPortHandlingFee" promptText="e.g., 450" />
+                              <Button onAction="#handleAddImportCost" styleClass="button-primary" text="Record Import Cost" />
+                              <Label fx:id="lblImportCostStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Vehicle Import Duty &amp; Freight Summary" />
+                              <TableView fx:id="tblImportCosts" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colImpId" prefWidth="90.0" text="Cost ID" />
+                                  <TableColumn fx:id="colImpChassis" prefWidth="130.0" text="Chassis No" />
+                                  <TableColumn fx:id="colImpLC" prefWidth="120.0" text="LC No" />
+                                  <TableColumn fx:id="colImpDuty" prefWidth="110.0" text="Duty ($)" />
+                                  <TableColumn fx:id="colImpFreight" prefWidth="110.0" text="Freight ($)" />
+                                  <TableColumn fx:id="colImpTotal" prefWidth="120.0" text="Total ($)" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 3: Manage Showroom Expenses -->
+          <Tab text="3. Showroom Expenses">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="12.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Showroom Expense Voucher" />
+                              <Label text="Category:" /><ComboBox fx:id="comboExpenseCategory" prefWidth="330.0" />
+                              <Label text="Description:" /><TextField fx:id="txtExpenseDesc" promptText="e.g., Office Utilities" />
+                              <Label text="Amount ($):" /><TextField fx:id="txtExpenseAmount" promptText="e.g., 750" />
+                              <Button onAction="#handleAddExpense" styleClass="button-primary" text="Log Expense Voucher" />
+                              <Label fx:id="lblExpenseStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Showroom Expense Ledger" />
+                              <TableView fx:id="tblExpenses" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colExpId" prefWidth="100.0" text="Exp ID" />
+                                  <TableColumn fx:id="colExpCategory" prefWidth="130.0" text="Category" />
+                                  <TableColumn fx:id="colExpDesc" prefWidth="220.0" text="Description" />
+                                  <TableColumn fx:id="colExpAmount" prefWidth="120.0" text="Amount ($)" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 4: Calculate Profit -->
+          <Tab text="4. Profit Engine">
+               <content>
+                  <VBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card-panel">
+                           <children>
+                              <Label text="Audit Period Start:" /><DatePicker fx:id="dpProfitStart" prefWidth="150.0" />
+                              <Label text="End:" /><DatePicker fx:id="dpProfitEnd" prefWidth="150.0" />
+                              <Button onAction="#handleCalculateProfit" styleClass="button-primary" text="Compute Net Profit" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="15.0">
+                           <children>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Total Revenue" /><Label fx:id="lblTotalRevenue" styleClass="metric-value" style="-fx-text-fill: #3699ff;" text="$0.00" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Import Costs" /><Label fx:id="lblTotalCosts" styleClass="metric-value" style="-fx-text-fill: #ffa800;" text="$0.00" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Operating Expenses" /><Label fx:id="lblTotalExpenses" styleClass="metric-value" style="-fx-text-fill: #f64e60;" text="$0.00" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Net Profit" /><Label fx:id="lblNetProfit" styleClass="metric-value" style="-fx-text-fill: #1bc5bd;" text="$0.00" /></children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="txtProfitBreakdown" editable="false" style="-fx-font-family: 'Courier New', monospace; -fx-font-size: 14px;" VBox.vgrow="ALWAYS" styleClass="card-panel" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 5: Manage Outstanding Payments -->
+          <Tab text="5. Outstanding Payments">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="12.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Payment Reminder Dispatch" />
+                              <Label text="Target Customer ID:" /><TextField fx:id="txtRemindCustId" promptText="e.g., CUST-102" />
+                              <Button onAction="#handleSendPaymentReminder" styleClass="button-primary" text="Send Due Notice" />
+                              <Label fx:id="lblOutstandingStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Accounts Receivable (Outstanding Dues)" />
+                              <TableView fx:id="tblOutstandingDues" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colDueCustId" prefWidth="120.0" text="Customer ID" />
+                                  <TableColumn fx:id="colDueName" prefWidth="180.0" text="Name" />
+                                  <TableColumn fx:id="colDuePhone" prefWidth="140.0" text="Phone" />
+                                  <TableColumn fx:id="colDueBalance" prefWidth="140.0" text="Balance Due ($)" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 6: Generate Financial Reports -->
+          <Tab text="6. Financial Reports">
+               <content>
+                  <VBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card-panel">
+                           <children>
+                              <Label text="Report Focus:" /><ComboBox fx:id="comboFinReportType" prefWidth="200.0" />
+                              <Label text="Start Date:" /><DatePicker fx:id="dpFinReportStart" prefWidth="150.0" />
+                              <Label text="End Date:" /><DatePicker fx:id="dpFinReportEnd" prefWidth="150.0" />
+                              <Button onAction="#handleGenerateFinancialReport" styleClass="button-primary" text="Generate Audit Report" />
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="txtFinReportOutput" editable="false" style="-fx-font-family: 'Courier New', monospace; -fx-font-size: 14px;" VBox.vgrow="ALWAYS" styleClass="card-panel" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 7: Manage Financial Records -->
+          <Tab text="7. Financial Records">
+               <content>
+                  <HBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <VBox prefWidth="350.0" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Manual Ledger Entry" />
+                              <Label text="Transaction Type:" /><ComboBox fx:id="comboRecordType" prefWidth="330.0" />
+                              <Label text="Category:" /><TextField fx:id="txtRecCategory" promptText="e.g., Bank Fee" />
+                              <Label text="Description:" /><TextField fx:id="txtRecDesc" promptText="e.g., Annual Account Maintenance" />
+                              <Label text="Amount ($):" /><TextField fx:id="txtRecAmount" promptText="e.g., 250" />
+                              <Label text="Reference / Voucher No:" /><TextField fx:id="txtRecReference" promptText="e.g., VOUCH-99" />
+                              <Button onAction="#handleAddFinancialRecord" styleClass="button-primary" text="Post to Ledger" />
+                              <Label fx:id="lblLedgerStatus" styleClass="status-label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="10.0" styleClass="card-panel">
+                           <children>
+                              <Label styleClass="card-title" text="Master Financial Ledger" />
+                              <TableView fx:id="tblFinancialLedger" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="colRecId" prefWidth="90.0" text="Rec ID" />
+                                  <TableColumn fx:id="colRecType" prefWidth="90.0" text="Type" />
+                                  <TableColumn fx:id="colRecCategory" prefWidth="130.0" text="Category" />
+                                  <TableColumn fx:id="colRecRef" prefWidth="120.0" text="Reference" />
+                                  <TableColumn fx:id="colRecAmount" prefWidth="120.0" text="Amount ($)" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+
+          <!-- Goal 8: Monitor Cash Flow -->
+          <Tab text="8. Cash Flow">
+               <content>
+                  <VBox spacing="15.0">
+                     <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="card-panel">
+                           <children>
+                              <Label text="Analysis Window Start:" /><DatePicker fx:id="dpCashFlowStart" prefWidth="150.0" />
+                              <Label text="End:" /><DatePicker fx:id="dpCashFlowEnd" prefWidth="150.0" />
+                              <Button onAction="#handleAnalyzeCashFlow" styleClass="button-primary" text="Audit Cash Flow" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="15.0">
+                           <children>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Total Inflow (Collections)" /><Label fx:id="lblCashInflow" styleClass="metric-value" style="-fx-text-fill: #1bc5bd;" text="$0.00" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Total Outflow (Costs &amp; Expenses)" /><Label fx:id="lblCashOutflow" styleClass="metric-value" style="-fx-text-fill: #f64e60;" text="$0.00" /></children>
+                              </VBox>
+                              <VBox styleClass="metric-box" HBox.hgrow="ALWAYS">
+                                 <children><Label text="Net Cash Position" /><Label fx:id="lblNetCashPosition" styleClass="metric-value" style="-fx-text-fill: #3699ff;" text="$0.00" /></children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="txtCashFlowAnalysis" editable="false" style="-fx-font-family: 'Courier New', monospace; -fx-font-size: 14px;" VBox.vgrow="ALWAYS" styleClass="card-panel" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
