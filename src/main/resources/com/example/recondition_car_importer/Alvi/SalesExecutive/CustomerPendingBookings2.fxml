@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Alvi.SalesExecutive.CustomerPendingBookings2">
+   <children>
+      <Text layoutX="214.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Bookings">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="backOnAction" layoutX="486.0" layoutY="40.0" mnemonicParsing="false" onAction="#backOnAction" text=" Back" />
+      <TableView fx:id="CustomerBookingsTV" layoutX="34.0" layoutY="87.0" prefHeight="200.0" prefWidth="531.0">
+        <columns>
+          <TableColumn fx:id="BookingIDTV" prefWidth="125.0" text="Booking ID" />
+          <TableColumn fx:id="CustomerTV" prefWidth="125.0" text="Customer" />
+            <TableColumn fx:id="VehicleTV" prefWidth="148.0" text="Vehicle" />
+            <TableColumn fx:id="StatusTV" prefWidth="132.0" text="Status" />
+        </columns>
+      </TableView>
+      <Text layoutX="41.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected Booking:" />
+      <Text layoutX="41.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name:" />
+      <Text layoutX="41.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle:" />
+      <Text layoutX="41.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method:" />
+      <Text layoutX="41.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pickup Date:" />
+      <Button layoutX="192.0" layoutY="468.0" mnemonicParsing="false" onAction="#CancelBookingOnAction" text="Cancel Booking" />
+      <Button layoutX="41.0" layoutY="468.0" mnemonicParsing="false" onAction="#confirmOnAction" text="Confirm Booking" />
+      <Label fx:id="selectedBookingLabel" layoutX="170.0" layoutY="319.0" text="Label" />
+      <Label fx:id="CustomerNameLabel" layoutX="170.0" layoutY="346.0" text="Label" />
+      <Label fx:id="VehicleLabel" layoutX="170.0" layoutY="375.0" text="Label" />
+      <Label fx:id="paymentMethodLabel" layoutX="170.0" layoutY="402.0" text="Label" />
+      <Label fx:id="pickupDateLabel" layoutX="170.0" layoutY="430.0" text="Label" />
+   </children>
+</AnchorPane>

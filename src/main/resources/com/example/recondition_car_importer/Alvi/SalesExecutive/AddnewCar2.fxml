@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Alvi.SalesExecutive.AddnewCar2">
+   <children>
+      <Text layoutX="187.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Imported Car">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="497.0" layoutY="39.0" mnemonicParsing="false" onAction="#backOnAction" text="Back" />
+      <Text layoutX="228.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Information">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="65.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make:" />
+      <Text layoutX="62.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model:" />
+      <Text layoutX="63.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year:" />
+      <Text layoutX="60.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fuel Type:" />
+      <Text layoutX="55.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chasis Number:" />
+      <Text layoutX="66.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
+      <Text layoutX="61.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transmission:" />
+      <Text layoutX="65.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mileage:" />
+      <Text layoutX="61.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Condition:" />
+      <ComboBox fx:id="carMakeCB" layoutX="143.0" layoutY="94.0" onAction="#onMakeSelected" prefWidth="150.0" />
+      <ComboBox fx:id="yearCB" layoutX="143.0" layoutY="163.0" prefWidth="150.0" />
+      <ComboBox fx:id="FuelTypeCB" layoutX="143.0" layoutY="212.0" prefWidth="150.0" />
+      <ComboBox fx:id="transmissionCB" layoutX="143.0" layoutY="247.0" prefWidth="150.0" />
+      <ComboBox fx:id="conditionCB" layoutX="143.0" layoutY="318.0" prefWidth="150.0" />
+      <TextField fx:id="mileageTF" layoutX="144.0" layoutY="282.0" />
+      <TextField fx:id="priceTF" layoutX="144.0" layoutY="358.0" />
+      <TextField fx:id="chassisNumberTF" layoutX="144.0" layoutY="396.0" />
+      <Button layoutX="55.0" layoutY="445.0" mnemonicParsing="false" onAction="#addVehicleOnAction" text="Add Vehicle" />
+      <Button layoutX="54.0" layoutY="483.0" mnemonicParsing="false" onAction="#clearOnAction" text="Clear" />
+      <ComboBox fx:id="modelCB" layoutX="144.0" layoutY="130.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
