@@ -1,90 +1,33 @@
 package com.example.recondition_car_importer;
 
-import com.example.recondition_car_importer.SceneSwitcher;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
-
-import java.io.IOException;
+import javafx.scene.control.TextField;
 
 public class LogInView
 {
     @javafx.fxml.FXML
-    private ComboBox<String> userinputCB;
+    private PasswordField password_PF;
     @javafx.fxml.FXML
-    private PasswordField password_TF;
+    private CheckBox showPassword_CB;
+    @javafx.fxml.FXML
+    private TextField email_TF;
 
     @javafx.fxml.FXML
     public void initialize() {
-
-        userinputCB.getItems().addAll(
-                "Customer",
-                "Sales Executive",
-                "Importer",
-                "Admin"
-        );
     }
 
     @javafx.fxml.FXML
-    public void loginContinue_OA(ActionEvent actionEvent) throws IOException {
-
-        String user = userinputCB.getValue();
-        String password = password_TF.getText();
-
-        // Validation
-        if (user == null || password.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Login Failed");
-            alert.setHeaderText(null);
-            alert.setContentText("Please select a user and enter a password.");
-            alert.showAndWait();
-            return;
-        }
-
-        // Dummy passwords for demonstration
-        switch (user) {
-
-            case "Customer":
-                if(password.equals("customer123")){
-                    SceneSwitcher.switchTo("Alvi/Customer/CustomerDashboard");
-                } else {
-                    showError();
-                }
-                break;
-
-            case "Sales Executive":
-                if(password.equals("sales123")){
-                    SceneSwitcher.switchTo("Alvi/SalesExecutive/SalesExecutiveDashboard");
-                } else {
-                    showError();
-                }
-                break;
-
-
-//            case "Admin":
-//                if(password.equals("admin123")){
-//                    SceneSwitcher.switchTo("");
-//                } else {
-//                    showError();
-//                }
-//                break
-
-//            case "Import Manager":
-//                if(password.equals("import123")){
-//                    SceneSwitcher.switchTo("");
-//                } else {
-//                    showError();
-//                }
-//                break
-        }
+    public void loginContinue_OA(ActionEvent actionEvent) {
     }
 
-    private void showError() {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Login Failed");
-        alert.setHeaderText(null);
-        alert.setContentText("Incorrect password.");
-        alert.showAndWait();
+    @javafx.fxml.FXML
+    public void showPassword_OA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void signUp_OA(ActionEvent actionEvent) {
     }
+}

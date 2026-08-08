@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #1e1e2e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.ProcessPaymentsController">
+    <children>
+        <Label text="Process Customer Payments &amp; Installments" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox prefWidth="320.0" spacing="15.0" style="-fx-background-color: #2b2b3b; -fx-padding: 15; -fx-background-radius: 8;">
+                    <children>
+                        <Label text="New Payment Entry" textFill="#a6adc8">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+
+                        <Label text="Select Invoice:" textFill="WHITE" />
+                        <ComboBox fx:id="comboInvoice" maxWidth="1.7976931348623157E308" promptText="Select Invoice" />
+
+                        <Label fx:id="lblRemainingBalance" text="Remaining Balance: BDT 0.00" textFill="#89b4fa">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+
+                        <Label text="Payment Method:" textFill="WHITE" />
+                        <ComboBox fx:id="comboPaymentMethod" maxWidth="1.7976931348623157E308" />
+
+                        <Label text="Payment Amount (BDT):" textFill="WHITE" />
+                        <TextField fx:id="txtPaymentAmount" promptText="e.g. 500000" />
+
+                        <Button maxWidth="1.7976931348623157E308" onAction="#handleRecordPayment" style="-fx-background-color: #a6e3a1; -fx-text-fill: #11111b; -fx-font-weight: bold; -fx-padding: 10;" text="Record Payment" />
+
+                        <Label fx:id="lblMessage" textFill="#f9e2af" wrapText="true" />
+                    </children>
+                </VBox>
+
+                <VBox HBox.hgrow="ALWAYS" spacing="10.0">
+                    <children>
+                        <Label text="Payment Transaction History" textFill="#a6adc8">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+
+                        <TableView fx:id="paymentTable" VBox.vgrow="ALWAYS" style="-fx-background-color: #2b2b3b;">
+                            <columns>
+                                <TableColumn fx:id="colPaymentId" prefWidth="100.0" text="Payment ID" />
+                                <TableColumn fx:id="colInvoiceId" prefWidth="120.0" text="Invoice ID" />
+                                <TableColumn fx:id="colMethod" prefWidth="110.0" text="Method" />
+                                <TableColumn fx:id="colAmount" prefWidth="130.0" text="Amount (BDT)" />
+                                <TableColumn fx:id="colDate" prefWidth="110.0" text="Date" />
+                                <TableColumn fx:id="colRemaining" prefWidth="140.0" text="Remaining (BDT)" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #1e1e2e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recondition_car_importer.Sifat.EmployeeSalaryController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Label text="Process Employee Salary &amp; Commissions" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Button onAction="#handleCalculateAndPay" style="-fx-background-color: #a6e3a1; -fx-text-fill: #11111b; -fx-font-weight: bold; -fx-padding: 8 20;" text="Calculate &amp; Pay Selected" />
+            </children>
+        </HBox>
+
+        <HBox spacing="30.0">
+            <children>
+                <Label fx:id="lblPayoutSummary" text="Total Monthly Payroll Expense: BDT 0.00" textFill="#89b4fa">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblMessage" textFill="#f9e2af" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <TableView fx:id="salaryTable" VBox.vgrow="ALWAYS" style="-fx-background-color: #2b2b3b;">
+            <columns>
+                <TableColumn fx:id="colEmpId" prefWidth="100.0" text="Employee ID" />
+                <TableColumn fx:id="colName" prefWidth="180.0" text="Name" />
+                <TableColumn fx:id="colBaseSalary" prefWidth="140.0" text="Base Salary (BDT)" />
+                <TableColumn fx:id="colCommRate" prefWidth="120.0" text="Commission %" />
+                <TableColumn fx:id="colSalesCount" prefWidth="100.0" text="Sales Count" />
+                <TableColumn fx:id="colTotalPay" prefWidth="160.0" text="Total Payout (BDT)" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
