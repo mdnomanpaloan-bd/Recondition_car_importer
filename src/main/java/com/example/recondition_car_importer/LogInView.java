@@ -32,7 +32,7 @@ public class LogInView
         String user = userinputCB.getValue();
         String password = password_TF.getText();
 
-        // Validation
+
         if (user == null || password.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");
@@ -42,7 +42,7 @@ public class LogInView
             return;
         }
 
-        // Dummy passwords for demonstration
+
         switch (user) {
 
             case "Customer":
