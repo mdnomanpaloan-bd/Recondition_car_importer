@@ -8,4 +8,12 @@ public class UserProfileView {
     private ComboBox GenderComboBox;
     @javafx.fxml.FXML
     private DatePicker DateofBirthComboBox;
+    @javafx.fxml.FXML
+    private DatePicker DateofBirthComboBox1;
+    @javafx.fxml.FXML
+    private ComboBox GenderComboBox1;
+    @javafx.fxml.FXML
+    private ComboBox GenderComboBox11;
+    @javafx.fxml.FXML
+    private DatePicker DateofBirthComboBox11;
 }
